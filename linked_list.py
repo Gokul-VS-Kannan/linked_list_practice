@@ -27,3 +27,16 @@ class LinkedList :
             # once the pointer is none break the loop and link the new node now
             current.pointer = new
 
+    # function to display the linked list
+    def show(self):
+        current = self.head
+        # check if head is none or not
+        if current is None:
+            print("The linked list is empty")
+        else:
+            # loop and print nodes
+            while current is not None:
+                print(current.data,end="->")
+                # append the current
+                current = current.pointer
+
