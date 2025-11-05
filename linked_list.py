@@ -64,3 +64,17 @@ class LinkedList :
 
 
 
+# Creating a linked list
+my_linked_list = LinkedList()
+my_linked_list.add(10)
+my_linked_list.add(20)
+my_linked_list.add(30)
+my_linked_list.add(30)
+my_linked_list.add(50)
+
+# display linked list
+my_linked_list.show()
+
+# deleting an element
+my_linked_list.delete(30)
+my_linked_list.show()
