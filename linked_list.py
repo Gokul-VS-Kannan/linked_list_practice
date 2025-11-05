@@ -39,4 +39,28 @@ class LinkedList :
                 print(current.data,end="->")
                 # append the current
                 current = current.pointer
+            print()
+    # function to delete node from linked list
+    def delete(self,data):
+        # check if head is not none
+        if self.head is not None:
+            # check if value match with the value of head
+            if self.head.data == data:
+                # shift the head to next node
+                self.head = self.head.pointer
+            # if value doesnot match
+            else:
+                current = self.head
+                # loop though the linked list untill pointer becomes none and data is not found
+                while current.pointer is not None and current.pointer.data != data:
+                    # update the current
+                    current = current.pointer
+                if current.pointer is not None:
+                    current.pointer = current.pointer.pointer
+                else:
+                    print(data,"not found in linked list")
+        else:
+            print("Linked list is empty")
+
+
 
