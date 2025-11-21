@@ -25,6 +25,21 @@ class linked_list:
                 n = n.ref
             n.ref = new_node
 
+    # method to add a node after some node in linked list
+    def add_after(self,data,x):
+        n = self.head
+
+        while n is not None:
+            if x == n.data:
+                break
+            n = n.ref
+        if n is None:
+            print("Tne node doesnot exist in Linked List")
+        else:
+            new_node = Node(data)
+            new_node.ref = n.ref
+            n.ref = new_node
+
     # method to print linked list
     def show(self):
         if self.head is None:
@@ -46,4 +61,6 @@ my_ll.add_end(100)
 my_ll.add_begin(20)
 my_ll.show()
 my_ll.add_end(500)
+my_ll.show()
+my_ll.add_after(50,10)
 my_ll.show()
