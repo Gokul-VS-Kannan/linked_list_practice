@@ -62,6 +62,13 @@ class linked_list:
             new_node.ref = n.ref
             n.ref = new_node
 
+    # method to remove head
+    def remove_head(self):
+        if self.head is None:
+            print("Linked list is empty so cant remove head node")
+        else:
+            self.head = self.head.ref
+        
     # method to print linked list
     def show(self):
         if self.head is None:
@@ -87,4 +94,7 @@ my_ll.show()
 my_ll.add_after(50,10)
 my_ll.show()
 my_ll.add_before(30,50)
+my_ll.show()
+
+my_ll.remove_head()
 my_ll.show()
