@@ -40,6 +40,28 @@ class linked_list:
             new_node.ref = n.ref
             n.ref = new_node
 
+    # method to add a node before some node in linked list
+    def add_before(self,data,x):
+        if self.head is None:
+            print("Linked list is empty")
+            return
+        if self.head.data == x:
+            new_node = Node(data)
+            new_node.ref = self.head
+            self.head = new_node
+            return
+        n = self.head
+        while n.ref is not None:
+            if n.ref.data == x:
+                break
+            n = n.ref
+        if n.ref is None:
+            print("Node not found in linked list")
+        else:
+            new_node = Node(data)
+            new_node.ref = n.ref
+            n.ref = new_node
+
     # method to print linked list
     def show(self):
         if self.head is None:
@@ -63,4 +85,6 @@ my_ll.show()
 my_ll.add_end(500)
 my_ll.show()
 my_ll.add_after(50,10)
+my_ll.show()
+my_ll.add_before(30,50)
 my_ll.show()
