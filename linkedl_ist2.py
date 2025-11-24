@@ -68,7 +68,19 @@ class linked_list:
             print("Linked list is empty so cant remove head node")
         else:
             self.head = self.head.ref
-        
+
+    # method to remove last node
+    def remove_tail(self):
+        if self.head is None:
+            print("Linked list is empty so cant remove head node")
+        elif self.head.ref is None:
+            self.head = None
+        else:
+            n = self.head
+            while n.ref.ref is not None:
+                n = n.ref
+            n.ref = None
+
     # method to print linked list
     def show(self):
         if self.head is None:
@@ -97,4 +109,6 @@ my_ll.add_before(30,50)
 my_ll.show()
 
 my_ll.remove_head()
+my_ll.show()
+my_ll.remove_tail()
 my_ll.show()
