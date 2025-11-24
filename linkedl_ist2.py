@@ -81,6 +81,24 @@ class linked_list:
                 n = n.ref
             n.ref = None
 
+    # method to remove a particular node by its value:
+    def delete(self,x):
+        if self.head is None:
+            print("Linked list is empty cant perform delete operation")
+            return
+        if self.head.data == x:
+            self.head = self.head.ref
+            return
+        n = self.head
+        while n.ref is not None:
+            if x == n.ref.data:
+                break
+            n = n.ref
+        if n.ref is None:
+            print(x,"not found in linked list")
+        else:
+            n.ref = n.ref.ref
+
     # method to print linked list
     def show(self):
         if self.head is None:
@@ -111,4 +129,10 @@ my_ll.show()
 my_ll.remove_head()
 my_ll.show()
 my_ll.remove_tail()
+my_ll.show()
+
+my_ll.delete(50)
+my_ll.show()
+
+my_ll.delete(10000)
 my_ll.show()
