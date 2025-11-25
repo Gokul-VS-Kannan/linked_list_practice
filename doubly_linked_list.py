@@ -20,7 +20,7 @@ class doubly_linked_list:
                 n = n.nref
             print("None")
 
-    # backword traversal method
+    # backward traversal method
     def show_reverse(self):
         if self.head is None:
             print("Linked list is empty")
@@ -32,3 +32,11 @@ class doubly_linked_list:
                 print(n.data,"--->",end=" ")
                 n = n.pref
             print("None")
+
+    # adding an node to empty linked list
+    def add_empty(self,data):
+        if self.head is None:
+            new_node = Node(data)
+            self.head = new_node
+        else:
+            print("Sorry the linked list is not empty")
