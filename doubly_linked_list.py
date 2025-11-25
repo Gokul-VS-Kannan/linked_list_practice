@@ -62,3 +62,17 @@ class doubly_linked_list:
                 n = n.nref
             n.nref = new_node
             new_node.pref = n
+
+
+# creating an instace of linked list
+my_dll = doubly_linked_list() 
+my_dll.add_empty(100)
+my_dll.show()
+
+my_dll.add_begin(90)
+my_dll.show()
+
+my_dll.add_end(110)
+my_dll.show()
+
+my_dll.show_reverse()
