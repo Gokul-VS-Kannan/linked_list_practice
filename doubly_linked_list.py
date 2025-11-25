@@ -50,3 +50,15 @@ class doubly_linked_list:
             new_node.nref = self.head
             self.head.pref = new_node
             self.head = new_node
+
+    # adding node at end
+    def add_end(self,data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            n = self.head
+            while n.nref is not None:
+                n = n.nref
+            n.nref = new_node
+            new_node.pref = n
