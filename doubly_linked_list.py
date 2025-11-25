@@ -40,3 +40,13 @@ class doubly_linked_list:
             self.head = new_node
         else:
             print("Sorry the linked list is not empty")
+
+    # adding node at begning
+    def add_begin(self,data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.nref = self.head
+            self.head.pref = new_node
+            self.head = new_node
