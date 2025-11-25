@@ -19,3 +19,16 @@ class doubly_linked_list:
                 print(n.data,"--->", end=" ")
                 n = n.nref
             print("None")
+
+    # backword traversal method
+    def show_reverse(self):
+        if self.head is None:
+            print("Linked list is empty")
+        else:
+            n = self.head
+            while n.nref is not None:
+                n = n.nref
+            while n is not None:
+                print(n.data,"--->",end=" ")
+                n = n.pref
+            print("None")
