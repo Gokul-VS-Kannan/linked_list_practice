@@ -63,16 +63,41 @@ class doubly_linked_list:
             n.nref = new_node
             new_node.pref = n
 
+    # method to add after new node
+    def add_after(self,data,x):
+        if self.head is None:
+            print("The linked list is empty")
+        else:
+            n = self.head
+            while n is not None:
+                if x == n.data:
+                    break
+                n = n.nref
+            if n is None:
+                print("Node not found in the Linked List")
+            else:
+                new_node = Node(data)
+                new_node.nref = n.nref
+                new_node.pref = n
+                if n.nref is not None:
+                    n.nref.pref = new_node 
+                n.nref = new_node
+
 
 # creating an instace of linked list
 my_dll = doubly_linked_list() 
 my_dll.add_empty(100)
 my_dll.show()
 
-my_dll.add_begin(90)
+my_dll.add_begin(50)
 my_dll.show()
 
 my_dll.add_end(110)
 my_dll.show()
 
 my_dll.show_reverse()
+
+my_dll.add_after(80,50)
+my_dll.add_after(90,80)
+my_dll.add_after(120,110)
+my_dll.show()
