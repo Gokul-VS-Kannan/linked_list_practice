@@ -129,6 +129,35 @@ class doubly_linked_list:
                 n = n.nref
             n.pref.nref = None
 
+    # method for deleting a node
+    def delete(self,x):
+        if self.head is None:
+            print("Linked list is Empty")
+            return
+        if self.head.nref is None:
+            if x == self.head.data:
+                self.head = None
+            else:
+                print(x," not found in the linked list")
+            return
+        if x == self.head.data:
+            self.head = self.head.nref
+            self.head.pref = None
+            return
+        n = self.head
+        while n.nref is not None:
+            if n.data == x:
+                break
+            n = n.nref
+        if n.nref is not None:
+            n.nref.pref = n.pref
+            n.pref.nref = n.nref
+        else:
+            if x == n.data:
+                n.pref.nref = None
+            else:
+                print(x,"not present in linked list")
+        
 # creating an instace of linked list
 my_dll = doubly_linked_list() 
 my_dll.add_empty(100)
@@ -156,4 +185,10 @@ my_dll.remove_head()
 my_dll.show()
 
 my_dll.remove_tail()
+my_dll.show()
+
+my_dll.delete(80)
+my_dll.delete(50)
+my_dll.delete(110)
+my_dll.delete(140)
 my_dll.show()
