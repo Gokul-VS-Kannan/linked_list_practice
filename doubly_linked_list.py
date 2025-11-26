@@ -105,6 +105,16 @@ class doubly_linked_list:
                     self.head = new_node
                 n.pref = new_node
 
+    # method to remove head node
+    def remove_head(self):
+        if self.head is None:
+            print("Linked list is empty")
+            return
+        if self.head.nref is None:
+            self.head = None
+        else:
+            self.head = self.head.nref
+            self.head.pref = None
 
 # creating an instace of linked list
 my_dll = doubly_linked_list() 
@@ -127,4 +137,7 @@ my_dll.show()
 my_dll.add_before(70,80)
 my_dll.add_before(60,70)
 my_dll.add_before(10,50)
+my_dll.show()
+
+my_dll.remove_head()
 my_dll.show()
